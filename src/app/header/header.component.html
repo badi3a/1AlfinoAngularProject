@@ -1,20 +1,23 @@
-<h1>{{ title }}</h1>
-<table border="2">
-  <tr><th>id</th><th>Title</th><th>Quantity</th><th>Like</th><th>Action</th></tr>
-  <tr *ngFor="let product of list">
-    <td>{{ product.id }}</td>
-    <td>{{ product.title }}</td>
-    <td>{{ product.quantity }}</td>
-    <td>{{ product.like}}</td>
-    <td>{{product.price}}</td>
-    <td>
-      <button (click)="incrementLikeByProduct(product)">
-        like
-      </button>
-      <button [hidden]="getValue(product)">
-        buy 1
-      </button>
 
-    </td>
-  </tr>
-</table>
+<form>
+  <label>Search by Price:</label>
+  <input type="number" name="price" [(ngModel)]="priceMax" class="form-control col-md-3">
+</form>
+<br>
+<div class="row">
+  <div  *ngFor="let product of list">
+    <div class="col-md-3" *ngIf="product.price<priceMax || priceMax==null">
+        <div class="card" style="width: 18rem;">
+        <img src="../../assets/picture.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">Price : {{product.price}} $</p>
+          <p class="card-text">Qunatity: {{product.quantity}}</p>
+          <button type="button" class="btn btn-info" (click)="incrementLikeByProduct(product)" >Like <3 {{product.like}}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
