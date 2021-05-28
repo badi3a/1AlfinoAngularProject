@@ -9,6 +9,7 @@ import {ProductComponent} from './product/product.component';
 import {ContactComponent} from './contact/contact.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     BestSellerComponent,
     ProductComponent,
     ContactComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

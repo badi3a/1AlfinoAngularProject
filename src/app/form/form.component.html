@@ -1,0 +1,40 @@
+<h1>Add a new Product</h1>
+<form #f="ngForm">
+
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" name="title" class="form-control" [(ngModel)]="product.title"
+           #t="ngModel" required minlength="3" pattern="[a-zA-Z]+$">
+    <br>
+    <div class="alert alert-danger" *ngIf="t.invalid && t.touched">
+
+      <div *ngIf="t.errors.required">title is a required field</div>
+
+      <div *ngIf="t.errors.minlength">title minlength is equal to 3</div>
+
+      <div *ngIf="t.errors.pattern">title is a string</div>
+
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label>Price</label>
+    <input type="number" name="price" class="form-control" [(ngModel)]="product.price"
+           required #p="ngModel">
+    <div class="alert alert-danger" *ngIf="p.invalid && p.touched">
+      <div *ngIf="p.errors.required">price is a required field</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Quantity</label>
+    <input type="number" name="quantity" class="form-control" [(ngModel)]="product.quantity" required>
+  </div>
+
+  <button class="btn btn-success" (click)="save()" [disabled]="f.invalid">
+    Save
+  </button>
+
+
+</form>
