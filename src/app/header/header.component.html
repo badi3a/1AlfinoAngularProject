@@ -1,25 +1,18 @@
-
-<form>
-  <label>Search by Price:</label>
-  <input type="number" name="price" [(ngModel)]="priceMax" class="form-control col-md-3">
-</form>
-<br>
-<div class="row">
-  <div  *ngFor="let product of list">
-    <div class="col-md-3" *ngIf="product.price<priceMax || priceMax==null">
-        <div class="card" style="width: 18rem;">
-        <img src="../../assets/picture.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{product.title}}</h5>
-          <p class="card-text">Price : {{product.price}} $ , Qunatity: {{product.quantity}}</p>
-          <button type="button" class="btn btn-info" (click)="incrementLikeByProduct(product)" >Like <3 {{product.like}}</button>
-          <button id="btn1" [class]="getClass(product)" (click)="buyProduct(product)" [disabled]="product.quantity==0">
-            buy
-          </button>
-        </div>
-      </div>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bestSeller">Best Seller</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
-
+</nav>

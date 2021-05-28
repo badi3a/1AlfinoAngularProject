@@ -1,0 +1,17 @@
+<form>
+  <label>Search by Price:</label>
+  <input type="number" name="price" [(ngModel)]="priceMax" class="form-control col-md-3">
+</form>
+<br>
+<div class="row">
+
+  <app-product  *ngFor="let object of list" [productChild]="object"
+                [priceMaxChild]="priceMax"
+                (eventLike)="incrementLikeByProduct($event)"
+               (eventBuy)="buyProduct($event)" >
+
+
+  </app-product>
+</div>
+
+
