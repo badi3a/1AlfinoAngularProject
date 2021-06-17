@@ -1,0 +1,20 @@
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4" *ngFor="let object of list" >
+          <app-classroom [c]="object" (incrmentEvent)="apply($event)" >
+
+          </app-classroom>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
