@@ -7,7 +7,7 @@ import {Classroom} from '../model/classroom';
   styleUrls: ['./classroom.component.css']
 })
 export class ClassroomComponent implements OnInit {
-  @Input() c: Classroom;
+  @Input()  c: Classroom;
   @Output() incrmentEvent = new EventEmitter<Classroom>();
   constructor() {
   }

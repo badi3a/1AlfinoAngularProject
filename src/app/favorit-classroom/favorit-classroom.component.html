@@ -1,1 +1,10 @@
-
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let object of favoritList" >
+        <app-classroom [c]="object" (incrmentEvent)="apply($event)" >
+        </app-classroom>
+      </div>
+    </div>
+  </div>
+</div>

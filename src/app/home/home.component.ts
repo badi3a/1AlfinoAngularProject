@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Classroom} from '../model/classroom';
+import {TraitementService} from '../services/traitement.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import {Classroom} from '../model/classroom';
 export class HomeComponent implements OnInit {
   title: string;
   list: Classroom[];
-  constructor() {
+
+  constructor(private servTrai: TraitementService) {
   }
 
   ngOnInit(): void {
@@ -21,12 +23,8 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  apply(c: Classroom) {
-    let i = this.list.indexOf(c);
-    if (i != -1) {
-      this.list[i].nbrParticipant++;
-    }
+  applyParent(c: Classroom) {
+    this.servTrai.apply(c, this.list);
   }
-
 
 }
